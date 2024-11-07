@@ -4,7 +4,6 @@ import json
 
 
 headers = {"Accept" : "application/yang-data+json", "Content-Type" : "application/yang-data+json"}
-auth = httpx.BasicAuth(username="cisco", password="cisco")
 host = "192.168.100.239"
 
 base_url = f"https://{host}/restconf/data/"
@@ -13,7 +12,7 @@ full_url = base_url+tree_url
 
 
 with httpx.Client(verify=False) as client:
-    response = client.get(full_url, headers=headers, auth=auth)
+    response = client.get(full_url, headers=headers, auth=("cisco","cisco"))
 
 print('\n',response)
 print('\n',response.text)
