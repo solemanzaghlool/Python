@@ -79,7 +79,8 @@ list1.insert(0, "BEGIN")
 print(list1)
 
 ## startwith and endswith methods:
-interface_list = ["GigabitEthernet0/0","GigabitEthernet0/1","GigabitEthernet0/2","Loopback1","Loopback2"]
+interface_list = ["GigabitEthernet0/0","GigabitEthernet0/1","GigabitEthernet0/2",
+                  "Loopback1","Loopback2"]
 gig_list = []
 ends_with_2_list = []
 for interface in interface_list:
@@ -102,11 +103,13 @@ new_gig_list = ["Soleman" for i in interface_list if i.startswith("Giga")]
 print(new_gig_list)
 
 ## using filter function
-interface_list = ["GigabitEthernet0/0","GigabitEthernet0/1","GigabitEthernet0/2","Loopback1","Loopback2"]
-my_gig_list = list(filter(lambda x: x.startswith("Gig"),interface_list)) 
+interface_list = ["GigabitEthernet0/0","GigabitEthernet0/1","GigabitEthernet0/2",
+                  "Loopback1","Loopback2"]
+my_gig_list = list(filter(lambda x: x.startswith("Gig"),interface_list))
 print(my_gig_list)
 
 ## using map function
-interface_list = ["GigabitEthernet0/0","GigabitEthernet0/1","GigabitEthernet0/2","Loopback1","Loopback2"]
-my_gig_list = list(map(lambda x: x.upper(),interface_list)) 
+interface_list = ["GigabitEthernet0/0","GigabitEthernet0/1","GigabitEthernet0/2",
+                  "Loopback1","Loopback2"]
+my_gig_list = list(map(lambda x: x.upper(),interface_list))
 print(my_gig_list)
