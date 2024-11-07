@@ -1,0 +1,8 @@
+router bgp {{ BGP.ASN }}
+{% for nbor in BGP.peers %}
+ neighbor {{nbor["neighbor"]}} remoate-as {{nbor["peer_asn"]}}
+{% if nbor["update_source"] == "yes"%}
+ neighbor {{nbor["neighbor"]}} update-source loopback0
+{% endif %}
+{% endfor %}
+

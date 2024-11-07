@@ -1,0 +1,20 @@
+---
+
+BGP:
+    ASN: "65001"
+    peers:
+        - neighbor: "10.0.0.1"
+          peer_asn: "65002"
+          update_source: "yes"
+          
+        - neighbor: "20.0.0.1"
+          peer_asn: "65003"
+          update_source: "yes"
+
+        - neighbor: "30.0.0.1"
+          peer_asn: "65004"
+          update_source: "no"
+
+        - neighbor: "40.0.0.1"
+          peer_asn: "65005"
+          update_source: "no"
