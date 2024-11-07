@@ -1,23 +1,27 @@
-from rich import print as rprint
-import httpx
+"""This is to demonstrate httpx Library"""
+
 import json
+import httpx
+from rich import print as rprint
 
+headers = {
+    "Accept": "application/yang-data+json",
+    "Content-Type": "application/yang-data+json",
+}
+HOST = "192.168.100.239"
 
-headers = {"Accept" : "application/yang-data+json", "Content-Type" : "application/yang-data+json"}
-host = "192.168.100.239"
-
-base_url = f"https://{host}/restconf/data/"
-tree_url = "Cisco-IOS-XE-arp-oper:arp-data"
-full_url = base_url+tree_url
+BASE_URL = f"https://{HOST}/restconf/data/"
+TREE_URL = "Cisco-IOS-XE-arp-oper:arp-data"
+FULL_URL = BASE_URL + TREE_URL
 
 
 with httpx.Client(verify=False) as client:
-    response = client.get(full_url, headers=headers, auth=("cisco","cisco"))
+    response = client.get(FULL_URL, headers=headers, auth=("cisco", "cisco"))
 
-print('\n',response)
-print('\n',response.text)
-print('\n',type(response.text))
+print("\n", response)
+print("\n", response.text)
+print("\n", type(response.text))
 
 response_dict = json.loads(response.text)
-print('\n',type(response_dict))
+print("\n", type(response_dict))
 rprint(response_dict)

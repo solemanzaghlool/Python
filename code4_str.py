@@ -1,56 +1,55 @@
 """These are examples of manipulating Strings"""
 
+FIRST_NAME = "Soleman"
+LAST_NAME = "Zaghlool"
 
-first_name = "Soleman"
-last_name = "Zaghlool"
+# Print Letters
+print(FIRST_NAME[0])
+print(FIRST_NAME[1])
+print(FIRST_NAME[2])
+print(FIRST_NAME[3])
+print(FIRST_NAME[4])
+print("\n")
 
-#Print Letters
-print (first_name[0])
-print (first_name[1])
-print (first_name[2])
-print (first_name[3])
-print (first_name[4])
-print ("\n")
-
-#Print letters using for loop
-for letter in last_name:
+# Print letters using for loop
+for letter in LAST_NAME:
     print(letter)
 
-#Multiline string
-multi = """Test1
+# Multiline string
+MULTI = """Test1
 Test2
 Test3"""
-print (multi)
+print(MULTI)
 
-#int/str conversion
-x = "5"
-y = 3
+# int/str conversion
+X = "5"
+Y = 3
 
-sum = int(x) + y
-print(sum)
+TOTAL = int(X) + Y
+print(TOTAL)
 
-#Joining strings
-conc = x + str(y)
-print(conc)
+# Joining strings
+CONC = X + str(Y)
+print(CONC)
 
-#format print
-print(f"joining x, and y results in {conc}")
+# format print
+print(f"joining x, and y results in {CONC}")
 
-#Convert multiple lines into a list of lines, then list of words
+# Convert multiple lines into a list of lines, then list of words
 
-long_text = """line1a line1b line1c line1d
+LONG_TEXT = """line1a line1b line1c line1d
 line2a line2b line2c line2d
 line3a line3b line3c line3d
 line4a line4b line4c line4d
 line5a line5b line5c line5d
 line6a line6b line6c line6d"""
-print (long_text)
+print(LONG_TEXT)
 
-long_text_list = long_text.splitlines()
-print (long_text_list)
+LONG_TEXT_list = LONG_TEXT.splitlines()
+print(LONG_TEXT_list)
 
 word_list = []
 
-for line in long_text_list:
+for line in LONG_TEXT_list:
     word_list = line.split()
-    print (word_list)
+    print(word_list)
